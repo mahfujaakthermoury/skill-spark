@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from 'react';
 
-const PopularSkills = () => {
+const AllPopularSkills = () => {
+    
+     const [skills, setSkills] = useState([]);
+    
+      useEffect(() => {
+        fetch('./skills.json')
+          .then(res => res.json())
+          .then(data => setSkills(data))
+          .catch(err => console.log(err))
+      }, [])
 
-  const [skills, setSkills] = useState([]);
-
-  useEffect(() => {
-    fetch('./skills.json')
-      .then(res => res.json())
-      .then(data => setSkills(data))
-      .catch(err => console.log(err))
-  }, [])
-
-  //console.log(skills);
-
-  return (
-    <div className='px-10 pt-20'>
-      <h3 className='font-bold text-3xl text-center pb-15'>Popular Skills</h3>
+    return (
+        <div className='p-10 pt-20'>
+      <h3 className='font-bold text-3xl text-center pb-15'>All Popular Skills</h3>
 
       <div className="px-[100px] grid grid-cols-3 gap-10">
         {
-          skills.slice(0,6).map(skill =>
+          skills.map(skill =>
             <div className="card bg-base-100 w-96 shadow-sm">
               <figure>
                 <img className='w-full h-[300px] object-cover'
@@ -41,7 +39,7 @@ const PopularSkills = () => {
         }
       </div>
     </div>
-  );
+    );
 };
 
-export default PopularSkills;
+export default AllPopularSkills;

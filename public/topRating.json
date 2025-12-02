@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.ibb.co.com/tT7T2zjB/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased.jpg",
+    "name": "John Anderson",
+    "description": "Expert web developer with 5+ years of building responsive and modern websites.",
+    "rating": 4.9
+  },
+  {
+    "id": 2,
+    "image": "https://i.ibb.co.com/svgkzRYW/happy-man-student-with-afro-hairdo-shows-white-teeth-being-good-mood-after-classes-273609-16608.jpg",
+    "name": "Sarah Miller",
+    "description": "Professional UI/UX designer highly skilled in creating user-centered designs.",
+    "rating": 4.8
+  },
+  {
+    "id": 3,
+    "image": "https://i.ibb.co.com/BDXLfG9/handsome-young-cheerful-man-with-arms-crossed-171337-1073.jpg",
+    "name": "Michael Brown",
+    "description": "Digital marketing specialist helping brands grow using modern strategies.",
+    "rating": 4.7
+  }
+]
