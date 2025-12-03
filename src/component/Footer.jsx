@@ -13,7 +13,7 @@ const Footer = () => {
     <h6 className="footer-title">Contact</h6>
     <a className="link link-hover">Phone: +082715904</a>
     <a className="link link-hover">E-mail: skillspark@info.com</a>
-    <a className="link link-hover">Address: Sylht, Bangladesh</a>
+    <a className="link link-hover">Address: Dhaka, Bangladesh</a>
   </nav>
   <nav>
     <h6 className="footer-title">Legal</h6>

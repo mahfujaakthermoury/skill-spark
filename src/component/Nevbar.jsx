@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const Nevbar = () => {
   return (
-    <div className="navbar bg-base-100 shadow-sm px-10 py-7 font-bold ">
+    <div className="navbar bg-base-100 shadow-sm px-10 py-7">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -27,7 +27,7 @@ const Nevbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-[#a7a7a7] font-bold text-[15px]">Login</a>
+        <Link to={'/Login'} className="btn bg-[#a7a7a7] font-bold text-[15px]">Login</Link>
       </div>
     </div>
   );

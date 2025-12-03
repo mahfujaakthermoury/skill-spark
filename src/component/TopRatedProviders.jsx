@@ -13,18 +13,17 @@ const TopRatedProviders = () => {
     }, [])
 
     return (
-        <div className='p-10 pt-20'>
-            <h3 className='font-bold text-3xl text-center pb-15'>Top Rated Providers</h3>
+        <div className='px-5 py-15 mt-10 bg-[#fffcdc]'>
+            <h3 className='font-bold text-3xl text-center pb-10'>Top Rated Providers</h3>
 
-            <div className="px-[100px] grid grid-cols-3">
+            <div className=" grid grid-cols-3 gap-x-4">
                 {
                     topRated.map(rating =>
-                        <div className="card bg-base-100 w-96 shadow-sm">
-                            <figure>
-                                <img className='mt-10 h-[100px] w-[100px] rounded-full '
+                        <div className=" card bg-base-100 shadow-sm ">
+                           <div className='flex'>
+                                 <div className='ml-2  mt-4 w-[180px]'><img className=' mt-5 h-[100px] w-[100px] rounded-full '
                                     src={rating?.image}
-                                    alt="image" />
-                            </figure>
+                                    alt="image" /></div>
                             <div className="card-body">
                                 <h2 className="card-title">{rating?.name}</h2>
                                 <p>Rating: {rating?.description} </p>
@@ -39,6 +38,7 @@ const TopRatedProviders = () => {
                                     </div>
                                 </div>
                             </div>
+                           </div>
                         </div>
                     )
                 }
