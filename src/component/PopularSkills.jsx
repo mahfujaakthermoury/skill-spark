@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 
 const PopularSkills = () => {
 
@@ -33,7 +34,7 @@ const PopularSkills = () => {
                   <p>Price: {skill?.price}$ </p>
                 </div> 
                 <div className="card-actions justify-end">
-                  <button className="btn bg-[#ffbf00] mt-5">View Details</button>
+                 <Link to={`/SkillDetails/${skill?.skillId}`}> <button className="btn bg-[#ffbf00] mt-5">View Details</button></Link>
                 </div>
               </div>
             </div>

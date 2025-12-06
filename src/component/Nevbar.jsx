@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router';
+import { AuthContext } from '../provider/AuthProvider';
+import { signOut } from 'firebase/auth';
+import auth from '../firebase/firebase.config';
 
 const Nevbar = () => {
+
+  const {user} = useContext(AuthContext);
+  const handleSignOut = ()=>{
+    signOut(auth)
+  }
+
   return (
     <div className="navbar bg-base-100 shadow-sm px-10 py-7">
       <div className="navbar-start">
@@ -23,12 +32,19 @@ const Nevbar = () => {
         <ul className="menu menu-horizontal px-1 text-[17px]">
           <li><Link to='/'>Home</Link ></li>
           <li><Link to='/AllPopularSkills'>Our Service</Link ></li>
-          <li><Link to='/'>My Profile</Link ></li>
+          <li><Link to='/Profile'>My Profile</Link ></li>
         </ul>
       </div>
-      <div className="navbar-end">
+      {
+        user && <div className="navbar-end">
+        <btn onClick={handleSignOut} className="btn bg-[#a7a7a7] font-bold text-[15px]">Logout</btn>
+      </div>
+      }
+      {
+        !user && <div className="navbar-end">
         <Link to={'/Login'} className="btn bg-[#a7a7a7] font-bold text-[15px]">Login</Link>
       </div>
+      }
     </div>
   );
 };
