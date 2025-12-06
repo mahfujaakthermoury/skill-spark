@@ -3,11 +3,12 @@ import { Link } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
 import { signOut } from 'firebase/auth';
 import auth from '../firebase/firebase.config';
+import { motion } from "motion/react"
 
 const Nevbar = () => {
 
-  const {user} = useContext(AuthContext);
-  const handleSignOut = ()=>{
+  const { user } = useContext(AuthContext);
+  const handleSignOut = () => {
     signOut(auth)
   }
 
@@ -37,13 +38,14 @@ const Nevbar = () => {
       </div>
       {
         user && <div className="navbar-end">
-        <btn onClick={handleSignOut} className="btn bg-[#a7a7a7] font-bold text-[15px]">Logout</btn>
-      </div>
+          <btn onClick={handleSignOut} className="btn bg-[#ffffff] text-[#ff0000] font-bold text-[15px]">Logout</btn>
+        </div>
       }
       {
-        !user && <div className="navbar-end">
-        <Link to={'/Login'} className="btn bg-[#a7a7a7] font-bold text-[15px]">Login</Link>
-      </div>
+        !user && <motion.div end={{ scale: 0.5 }} animate={{ scale: 0.9 }}
+          className="navbar-end">
+          <Link to={'/Login'} className="btn bg-[#eef4f4] font-bold text-[15px] px-6">Login</Link>
+        </motion.div>
       }
     </div>
   );

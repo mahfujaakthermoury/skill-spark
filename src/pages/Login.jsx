@@ -4,6 +4,8 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import auth from '../firebase/firebase.config';
 import { AuthContext } from '../provider/AuthProvider';
 import { FcGoogle } from "react-icons/fc";
+import 'animate.css';
+
 
 const Login = () => {
 
@@ -51,7 +53,7 @@ const [email, setEmail] = useState('');
     return (
         <div className="hero bg-base-200 py-20 w-[500px] mx-auto my-20">
             <div className="">
-                <h1 className="text-3xl font-bold text-center mb-10">Login now!</h1>
+                <h1 className="animate__animated animate__pulse text-3xl font-bold text-center mb-10">Login now!</h1>
                 <div className="card bg-base-100 w-[350px] shadow-2xl">
                     <div className="card-body">
                         <form onSubmit={handleSubmit} className="fieldset text-[15px]">

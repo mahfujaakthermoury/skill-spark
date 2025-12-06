@@ -91,7 +91,7 @@ SPA behavior with no reload issues on routes
 
 Smooth animations using NPM packages
 
-#) NPM packages: tailwind, daisyui, swiper, 
+#) NPM packages: Swiper, React-hot-toast, Animate.css, Motion 
 
 
 

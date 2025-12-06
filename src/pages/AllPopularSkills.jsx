@@ -37,7 +37,9 @@ const AllPopularSkills = () => {
                   <p>Price: {skill?.price}$ </p>
                 </div>
                 <div className="card-actions justify-end">
-                  <Link to={`/SkillDetails/${skill?.skillId}`}> <button className="btn bg-[#ffbf00] mt-5">View Details</button></Link>
+                  <Link to={`/SkillDetails/${skill?.skillId}`}> <motion.button whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="btn bg-[#ffbf00] mt-5">View Details</motion.button></Link>
                 </div>
               </div>
             </motion.div>

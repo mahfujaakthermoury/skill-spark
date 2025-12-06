@@ -1,14 +1,16 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
 import auth from '../firebase/firebase.config';
 import { updateProfile } from 'firebase/auth';
 import { FcGoogle } from "react-icons/fc";
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const SignUp = () => {
 
     const { setUser, handleGoogleSignin, signupWithEmailPass } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -21,13 +23,13 @@ const SignUp = () => {
         const lowerase = /[a-z]/;
 
         if(password.length < 6){
-            return alert('Length must be at least 6 character ')
+            return toast.error('Password must be at least 6 character ')
         }
         if(!uppercase.test(password)){
-            return alert('Must have an Uppercase letter in the password')
+            return toast.error('Need an Uppercase letter')
         }
         if(!lowerase.test(password)){
-            return alert('Must have a Lowercase letter in the password')
+            return toast.error('Must have a Lowercase letter in the password')
         }
 
         signupWithEmailPass(email, password)
@@ -37,6 +39,8 @@ const SignUp = () => {
                     displayName: name, photoURL: photoUrl
                 }).then(() => {
                     setUser(userCredential.user)
+                    navigate('/');
+
 
                 }).catch((error) => {
                     console.log(error)
@@ -52,6 +56,7 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user
                 setUser(user)
+                navigate('/');
             })
             .catch(err =>
                 console.log(err)
@@ -77,7 +82,7 @@ const SignUp = () => {
                             <button onClick={googleSignup} className="btn mt-5"><span className='text-xl'>
                                 <FcGoogle /></span><span>Signup with Google </span>
                             </button>
-                            <button className="btn btn-neutral mt-4">Register</button>
+                            <button className="btn btn-neutral mt-4">Register</button>  <Toaster />
                         </form>
                     </div>
                 </div>

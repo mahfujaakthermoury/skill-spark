@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import icon from '../assets/Rating.png'
 
+
 const TopRatedProviders = () => {
 
     const [topRated, settopRated] = useState([]);
@@ -14,9 +15,9 @@ const TopRatedProviders = () => {
 
     return (
         <div className='px-5 py-15 mt-10 bg-[#fffcdc]'>
-            <h3 className='font-bold text-3xl text-center pb-10'>Top Rated Providers</h3>
+            <h3 className='animate__animated animate__pulse font-bold text-3xl text-center pb-10'>Top Rated Providers</h3>
 
-            <div className=" grid grid-cols-3 gap-x-4">
+            <div className=" flex gap-5">
                 {
                     topRated.map(rating =>
                         <div className=" card bg-base-100 shadow-sm ">
