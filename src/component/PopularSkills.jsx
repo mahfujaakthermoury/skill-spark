@@ -37,7 +37,7 @@ const PopularSkills = () => {
                 <h2 className="card-title">{skill?.skillName}</h2>
                 <div className='flex justify-between py-5'>
                   <p>Rating: {skill?.rating} </p>
-                  <p>Price: {skill?.price}$ </p>
+                  <p className='ml-50'>Price: {skill?.price}$ </p>
                 </div> 
                 <div className="card-actions justify-end">
                  <Link to={`/SkillDetails/${skill?.skillId}`}> <motion.button whileHover={{ scale: 1.1 }}

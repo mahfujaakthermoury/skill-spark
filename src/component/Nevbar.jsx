@@ -22,9 +22,9 @@ const Nevbar = () => {
           <ul
             tabIndex="-1"
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-            <li><a>Home</a></li>
-            <li><a>Our Service</a></li>
-            <li><a>My Profile</a></li>
+            <li><Link to='/'>Home</Link ></li>
+            <li><Link to='/AllPopularSkills'>Our Service</Link ></li>
+            <li><Link to='/Profile'>My Profile</Link ></li>
           </ul>
         </div>
         <a className="btn btn-ghost text-4xl font-bold text-[#ffbf00] ">SkillSpark</a>
@@ -38,13 +38,20 @@ const Nevbar = () => {
       </div>
       {
         user && <div className="navbar-end">
-          <btn onClick={handleSignOut} className="btn bg-[#ffffff] text-[#ff0000] font-bold text-[15px]">Logout</btn>
+          <div className="avatar mr-3 hover:{user.displayName}">
+                <div className="w-15 rounded-full">
+                    <img src="{user.photoURL}" />
+                </div>
+            </div>
+          <btn onClick={handleSignOut} className="btn bg-[#000000] text-[#ecb306]  font-bold text-[15px]">Logout</btn>
         </div>
-      }
+      } 
       {
         !user && <motion.div end={{ scale: 0.5 }} animate={{ scale: 0.9 }}
           className="navbar-end">
-          <Link to={'/Login'} className="btn bg-[#eef4f4] font-bold text-[15px] px-6">Login</Link>
+          <Link to={'/Login'} className="btn bg-[#000000] text-[#ffbf00]  font-bold text-[15px] px-6 mr-3">Login</Link>
+          <Link to={'/SignUp'} className="btn bg-[#ffbf00] text-[#000000]  font-bold text-[15px] px-6">Sign Up</Link>
+
         </motion.div>
       }
     </div>

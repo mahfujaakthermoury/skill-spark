@@ -5,6 +5,8 @@ import auth from '../firebase/firebase.config';
 import { AuthContext } from '../provider/AuthProvider';
 import { FcGoogle } from "react-icons/fc";
 import 'animate.css';
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+
 
 
 const Login = () => {
@@ -13,7 +15,8 @@ const Login = () => {
 
     const location = useLocation();
     const navigate = useNavigate();
-const [email, setEmail] = useState('');
+    const [email, setEmail] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
 
     console.log(location);
 
@@ -46,9 +49,10 @@ const [email, setEmail] = useState('');
             )
     }
 
-    const handleForget = () =>{
+    const handleForget = () => {
         navigate(`/ForgetPass/${email}`)
     }
+
 
     return (
         <div className="hero bg-base-200 py-20 w-[500px] mx-auto my-20">
@@ -58,9 +62,18 @@ const [email, setEmail] = useState('');
                     <div className="card-body">
                         <form onSubmit={handleSubmit} className="fieldset text-[15px]">
                             <label className="label">Email</label>
-                            <input onChange={(e)=> setEmail(e.target.value)} name='email' type="email" className="input" placeholder="Email" />
-                            <label className="label">Password</label>
-                            <input name='password' type="password" className="input" placeholder="Password" />
+                            <input onChange={(e) => setEmail(e.target.value)} name='email' type="email" className="input" placeholder="Email" />
+                            <div>
+                                <label className="label">Password</label>
+                                <div className="relative">
+                                    <input name="password" type={showPassword ? "text" : "password"}
+                                        className="input w-full pr-12" placeholder="Password" />
+                                    <button type="button" onClick={() => setShowPassword(!showPassword)}
+                                        className="absolute right-3 top-3 text-2xl">
+                                        {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                                    </button>
+                                </div>
+                            </div>
                             <div className='mt-2'><button onClick={handleForget} className="link link-hover">Forgot password?</button></div>
                             <div className=''><span className='text-[red]'>Don't have an account? </span><Link to={'/signup'} className="link link-hover font-bold">Sign Up</Link></div>
                             <button onClick={googleSignin} className="btn mt-5"><span className='text-xl'><FcGoogle /></span><span>Login with Google</span></button>
