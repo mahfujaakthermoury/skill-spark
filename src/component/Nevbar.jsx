@@ -40,7 +40,8 @@ const Nevbar = () => {
         user && <div className="navbar-end">
           <div className="avatar mr-3 hover:{user.displayName}">
                 <div className="w-15 rounded-full">
-                    <img src="{user.photoURL}" />
+                    <img src={user?.photoURL || "fallback-image-url"} alt="User" />
+
                 </div>
             </div>
           <btn onClick={handleSignOut} className="btn bg-[#000000] text-[#ecb306]  font-bold text-[15px]">Logout</btn>
