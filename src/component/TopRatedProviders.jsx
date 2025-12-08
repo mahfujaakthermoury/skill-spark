@@ -17,10 +17,10 @@ const TopRatedProviders = () => {
         <div className='px-5 py-15 mt-10 bg-[#fffcdc]'>
             <h3 className='animate__animated animate__pulse font-bold text-3xl text-center pb-10'>Top Rated Providers</h3>
 
-            <div className=" flex gap-5">
+            <div className="md:flex gap-5">
                 {
                     topRated.map(rating =>
-                        <div className=" card bg-base-100 shadow-sm ">
+                        <div className=" card bg-base-100 shadow-sm mb-5">
                            <div className='flex'>
                                  <div className='ml-2  mt-4 w-[180px]'><img className=' mt-5 h-[100px] w-[100px] rounded-full '
                                     src={rating?.image}

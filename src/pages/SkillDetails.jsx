@@ -38,18 +38,18 @@ const SkillDetails = () => {
     return (
         <div className='my-20'>
             <div className="flex justify-center ">
-                <div className=" card w-[800px] bg-base-100 shadow-sm">
+                <div className=" card w-full max-w-[800px] bg-base-100 shadow-sm">
                     <figure>
-                        <img className='w-full h-[500px] object-cover'
+                        <img className='w-full h-[500px] lg:object-cover'
                             src={findResult?.image}
                             alt="image" />
                     </figure>
                     <div className="card-body">
-                        <div className='flex justify-between items-center py-5'>
+                        <div className='flex justify-between items-center py-5 '>
                             <h2 className="card-title">{findResult?.skillName}</h2>
-                            <p className='font-bold ml-100 text-[#de3d0c]'>Slots Available: {findResult?.slotsAvailable} </p>
+                            <p className='font-bold ml-5 sm:ml-100 text-[#de3d0c]'>Slots Available: {findResult?.slotsAvailable} </p>
                         </div>
-                        <p className='my-5'>{findResult?.description}</p>
+                        <p className='my-5 w-auto sm:text-justify'>{findResult?.description}</p>
                         <div className="flex justify-between items-center">
                             <div className=' py-5 space-y-3'>
                                 <p className=''>Price: {findResult?.price}$ </p>

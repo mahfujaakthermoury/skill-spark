@@ -17,10 +17,10 @@ const PopularSkills = () => {
 
   return (
     
-    <div className='px-10 pt-30'>
-      <h3 className='font-bold text-4xl text-center pb-20 '>Popular Skills</h3>
+    <div className='pt-30 sm:px-10'>
+      <h3 className='font-bold text-3xl text-center pb-20 '>Popular Skills</h3>
 
-      <div className="px-[100px] grid grid-cols-3 gap-10">
+      <div className="sm:px-[100px] sm:grid grid-cols-3 gap-10">
         {
           skills.slice(0,6).map(skill =>
             <motion.div initial={{ scale: 0.9 }}

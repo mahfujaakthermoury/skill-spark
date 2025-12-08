@@ -14,10 +14,10 @@ const AllPopularSkills = () => {
   }, [])
 
   return (
-    <div className='p-10 pt-20'>
+    <div className='pt-20 sm:p-10'>
       <h3 className='font-bold text-3xl text-center pb-15'>All Popular Skills</h3>
 
-      <div className="px-[100px] grid grid-cols-3 gap-10">
+      <div className="sm:px-[100px] sm:grid grid-cols-3 gap-10">
         {
           skills.map(skill =>
             <motion.div initial={{ scale: 0.9 }}

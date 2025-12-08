@@ -17,10 +17,10 @@ const Slider = () => {
     return (
         <div className=''>
             <Swiper loop={true}  effect={'fade'}  navigation={true} modules={[EffectFade, Navigation]} className="mySwiper">
-                <SwiperSlide><img src={i1} alt="" className='w-full h-[550px] object-cover' /></SwiperSlide>
-                <SwiperSlide><img src={i2} alt="" className='w-full h-[550px] object-cover' /></SwiperSlide>
-                <SwiperSlide><img src={i3} alt="" className='w-full h-[550px] object-cover' /></SwiperSlide>
-                <SwiperSlide><img src={i4} alt="" className='w-full h-[550px] object-cover' /></SwiperSlide>
+                <SwiperSlide><img src={i1} alt="" className='w-full h-[550px] lg:object-cover' /></SwiperSlide>
+                <SwiperSlide><img src={i2} alt="" className='w-full h-[550px] lg:object-cover' /></SwiperSlide>
+                <SwiperSlide><img src={i3} alt="" className='w-full h-[550px] lg:object-cover' /></SwiperSlide>
+                <SwiperSlide><img src={i4} alt="" className='w-full h-[550px] lg:object-cover' /></SwiperSlide>
 
             </Swiper>
         </div>
