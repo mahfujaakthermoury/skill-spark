@@ -14,8 +14,8 @@ const TopRatedProviders = () => {
     }, [])
 
     return (
-        <div className='px-5 py-15 mt-10 bg-[#fffcdc]'>
-            <h3 className='animate__animated animate__pulse font-bold text-3xl text-center pb-10'>Top Rated Providers</h3>
+        <div className='px-5 py-20'>
+            <h3 className='animate__animated animate__pulse font-bold text-[#076a21]  text-3xl sm:text-4xl  text-center pb-12'>Volunteers of the Year</h3>
 
             <div className="md:flex gap-5">
                 {
@@ -27,9 +27,9 @@ const TopRatedProviders = () => {
                                     alt="image" /></div>
                             <div className="card-body">
                                 <h2 className="card-title">{rating?.name}</h2>
-                                <p>Rating: {rating?.description} </p>
+                                <p> {rating?.description} </p>
                                 <div className='flex py-3'>
-                                    <p>Price: {rating?.rating}</p> 
+                                    <p>Rating: {rating?.rating}</p> 
                                     <div className='flex'>
                                         <img src={icon} className='h-5 w-5' alt="" /> 
                                         <img src={icon} className='h-5 w-5' alt="" /> 

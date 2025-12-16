@@ -1,8 +1,8 @@
 import React from 'react';
 import Slider from '../component/Slider';
-import PopularSkills from '../component/PopularSkills';
-import TopRatedProviders from '../component/TopRatedProviders';
-import HowItWorks from '../component/HowItWorks';
+import PopularService from '../component/PopularService';
+import TopVolunteers from '../component/TopVolunteers';
+import ActivitySummary from '../component/ActivitySummary';
 
 
 
@@ -10,9 +10,9 @@ const Home = () => {
     return (
         <div>
             <Slider></Slider>
-            <PopularSkills></PopularSkills>
-            <TopRatedProviders></TopRatedProviders>
-            <HowItWorks></HowItWorks>
+            <PopularService></PopularService>
+            <ActivitySummary></ActivitySummary>
+            <TopVolunteers></TopVolunteers>
         </div>
     );
 };

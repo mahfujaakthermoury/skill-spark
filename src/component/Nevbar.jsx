@@ -1,11 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
 import { signOut } from 'firebase/auth';
 import auth from '../firebase/firebase.config';
 import { motion } from "motion/react"
+import logo from '../assets/logo.png'
+import Cart from '../assets/cart.png'
 
-const Nevbar = () => {
+const Nevbar = ({ cart }) => {
+
+  
+      
+
 
   const { user } = useContext(AuthContext);
   const handleSignOut = () => {
@@ -23,35 +29,35 @@ const Nevbar = () => {
             tabIndex="-1"
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
             <li><Link to='/'>Home</Link ></li>
-            <li><Link to='/AllPopularSkills'>Our Service</Link ></li>
+            <li><Link to='/About'>About Us</Link ></li>
+            <li><Link to='/AllService'>Service</Link ></li>
             <li><Link to='/Profile'>My Profile</Link ></li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-4xl font-bold text-[#ffbf00] ">SkillSpark</a>
+        <a className="btn btn-ghost text-4xl font-bold"><img src={logo} className='h-[80px] w-[80px]' alt="" /></a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-[17px]">
           <li><Link to='/'>Home</Link ></li>
-          <li><Link to='/AllPopularSkills'>Our Service</Link ></li>
+          <li><Link to='/About'>About Us</Link ></li>
+          <li><Link to='/AllService'>Service</Link ></li>
           <li><Link to='/Profile'>My Profile</Link ></li>
         </ul>
       </div>
       {
         user && <div className="navbar-end">
-          <div className="avatar mr-3 hover:{user.displayName}">
-                <div className="w-15 rounded-full">
-                    <img src={user?.photoURL || "fallback-image-url"} alt="User" />
-
-                </div>
+           <div class=" activity1 flex items-center rounded-[25px]  px-8 max-sm:p-2 mr-5  ">
+                <p >{cart}</p>
+                <img src={Cart} alt="" class="h-[22px] w-[22px] mr-2"/>
             </div>
-          <btn onClick={handleSignOut} className="btn bg-[#000000] text-[#ecb306]  font-bold text-[15px]">Logout</btn>
+          <btn onClick={handleSignOut} className="btn bg-[#ffffff] text-[#109937]  font-bold text-[15px]">Logout</btn>
         </div>
-      } 
+      }
       {
         !user && <motion.div end={{ scale: 0.5 }} animate={{ scale: 0.9 }}
           className="navbar-end">
-          <Link to={'/Login'} className="btn bg-[#000000] text-[#ffbf00]  font-bold text-[15px] px-6 mr-3">Login</Link>
-          <Link to={'/SignUp'} className="btn bg-[#ffbf00] text-[#000000]  font-bold text-[15px] px-6">Sign Up</Link>
+          <Link to={'/Login'} className="btn bg-[#1a9b38] text-[#ffffff]  font-bold text-[15px] px-6 mr-3">Login</Link>
+          <Link to={'/SignUp'} className="btn bg-[#b5b3b3] text-[#ffffff]  font-bold text-[15px] px-6">Sign Up</Link>
 
         </motion.div>
       }

@@ -1,18 +1,19 @@
 import React from 'react';
+import logo from '../assets/logo.png'
 
 const Footer = () => {
     return (
         <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
   <aside>
-    <a className="btn btn-ghost text-4xl font-bold text-[#ffbf00] ">SkillSpark</a>
+    <a className="btn btn-ghost text-4xl font-bold text-[#ffbf00] "><img src={logo} className='h-[80px] w-[80px] ' alt="" /></a>
     <p className='pl-4 pt-5'>
-      SkillSpark Development Ltd.
+      NatureBloom Trust Environmental Organization.
     </p>
   </aside>
   <nav>
     <h6 className="footer-title">Contact</h6>
     <a className="link link-hover">Phone: +082715904</a>
-    <a className="link link-hover">E-mail: skillspark@info.com</a>
+    <a className="link link-hover">E-mail: naturebloomtrust@info.com</a>
     <a className="link link-hover">Address: Dhaka, Bangladesh</a>
   </nav>
   <nav>
